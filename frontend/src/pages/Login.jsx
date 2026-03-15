@@ -18,14 +18,14 @@ function Login() {
 
     try {
       if (!isLogin) {
-        await axios.post("http://127.0.0.1:8000/api/accounts/register/", {
+        await axios.post("https://todo-list-project-ld8p.onrender.com/api/accounts/register/", {
           username: name,
           email: email,
           password: password,
         });
       }
 
-      const res = await axios.post("http://127.0.0.1:8000/api/token/", {
+      const res = await axios.post("https://todo-list-project-ld8p.onrender.com/api/token/", {
         username: isLogin ? email : name,
         password: password,
       });
@@ -51,7 +51,7 @@ function Login() {
           <input name="fullname" type="text" placeholder="Full Name" required />
         )}
 
-        <input name="email" type="text" placeholder="Username" required />
+        <input name="email" type="text" placeholder="mail id or user name " required />
         <input name="password" type="password" placeholder="Password" required />
 
         <button type="submit" disabled={loading}>

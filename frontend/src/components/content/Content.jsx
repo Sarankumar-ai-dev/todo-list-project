@@ -20,7 +20,7 @@ function Content({ search }) {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/tasks/", { headers });
+      const res = await axios.get("https://todo-list-project-ld8p.onrender.com/api/tasks/", { headers });
       setTasks(res.data);
     } catch {
       console.error("Failed to fetch tasks");
@@ -44,10 +44,10 @@ function Content({ search }) {
     if (!title || !start || !end) return alert("All fields are required");
     try {
       if (editId) {
-        await axios.put(`http://127.0.0.1:8000/api/tasks/${editId}/`,
+        await axios.put(`https://todo-list-project-ld8p.onrender.com/api/tasks/${editId}/`,
           { title, start, end }, { headers });
       } else {
-        await axios.post("http://127.0.0.1:8000/api/tasks/",
+        await axios.post("https://todo-list-project-ld8p.onrender.com/api/tasks/",
           { title, start, end, completed: false }, { headers });
       }
       setShowModal(false);
@@ -60,7 +60,7 @@ function Content({ search }) {
   const deleteTask = async (id) => {
     if (!window.confirm("Delete this task?")) return;
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/tasks/${id}/`, { headers });
+      await axios.delete(`https://todo-list-project-ld8p.onrender.com/api/tasks/${id}/`, { headers });
       fetchTasks();
     } catch {
       alert("Failed to delete task");
@@ -69,7 +69,7 @@ function Content({ search }) {
 
   const toggleComplete = async (task) => {
     try {
-      await axios.patch(`http://127.0.0.1:8000/api/tasks/${task.id}/`,
+      await axios.patch(`https://todo-list-project-ld8p.onrender.com/api/tasks/${task.id}/`,
         { completed: !task.completed }, { headers });
       fetchTasks();
     } catch {
