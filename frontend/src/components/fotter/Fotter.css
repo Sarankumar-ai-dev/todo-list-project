@@ -1,0 +1,15 @@
+.fotter{
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(80, 80, 121);
+    padding: 25px;
+    align-items: center;
+    width: 100%;
+}
+.fotter-text{
+    font-size: 32px;
+    font-weight: bold;
+    color:rgb(243, 215, 56);
+    text-align: center;
+    justify-content: center;
+}

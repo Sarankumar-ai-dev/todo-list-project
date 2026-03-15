@@ -1,0 +1,5 @@
+env/
+nodemodules/
+__pysache__/
+*.pyc
+.env

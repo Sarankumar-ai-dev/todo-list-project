@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+
+.navbar {
+  background-color: rgb(80, 80, 121);
+  width: 100%;
+  color: white;
+  padding: 20px 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text { margin-top: -10px; }
+
+.name {
+  margin: 10px 10px 5px 80px;
+  font-size: 55px;
+  font-weight: bold;
+  color: rgb(243, 215, 56);
+}
+
+.title {
+  margin: 0 0 0 80px;
+  font-size: 23px;
+  padding-left: 10px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 22px;
+  margin-top: 5px;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover { transform: scale(1.1); }
+
+.profile-container { position: relative; }
+
+.dropdown {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.dropdown p { margin: 0; }
+.dropdown p:hover { color: red; }
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 32px;
+    margin-left: 15px;
+  }
+  .title {
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
