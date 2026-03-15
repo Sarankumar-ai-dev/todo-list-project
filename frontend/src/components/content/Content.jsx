@@ -144,11 +144,13 @@ function Content({ search }) {
             />
             <input
               type="date"
+              placeholder="Starting date"
               value={start}
               onChange={(e) => setStart(e.target.value)}
             />
             <input
               type="date"
+              placeholder="Ending date"
               value={end}
               onChange={(e) => setEnd(e.target.value)}
             />
