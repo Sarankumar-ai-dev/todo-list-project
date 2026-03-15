@@ -1,11 +1,12 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -56,14 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'to_do.wsgi.application'
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
-    }
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
 
 AUTH_PASSWORD_VALIDATORS = [
